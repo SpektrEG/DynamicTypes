@@ -146,6 +146,7 @@ namespace DynamicsTypes
             obj = "Hello!";
             Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
             obj = false;
+            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
             // Компилятором допускается изменение значения.
             // В конкретном случае - значения поля Z.
             // Даже если этого поля не было и нет! Все проблемы вознакают на этапе выполнения кода.
@@ -156,7 +157,6 @@ namespace DynamicsTypes
             // В данном случае транслятор допустит оператор присвоения к выполнению, поскольку класс Point3D 
             // объявление свойства Z типа double
             // Однако на этапе выполнения возникает исключение, посколько в данный момент obj ссылается на объект
-            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
             obj = new Point3D();
             Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
             ((Point3D)obj).Z = 125.125;
@@ -164,16 +164,16 @@ namespace DynamicsTypes
             // Объявлена переменная типа dynamic по имени t.
             // Аналогично, t может получить какое угодно начальное занчение, и на протяэении времени существования переменной это значение может быть заменено новым.
             dynamic t = "Hello!";
-            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.GetType(), t);
 
             t = false;
-            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.GetType(), t);
 
             t = new Point2D();
-            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.GetType(), t);
 
             t.Y = Math.E;
-            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.GetType(), t);
 
             try
             {
