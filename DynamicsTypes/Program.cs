@@ -12,7 +12,9 @@ namespace DynamicsTypes
         {
             // F1();
             // F2();
-            F3();
+            // F3();
+            F4();
+            // F5();
         }
 
         static void F1()
@@ -130,7 +132,57 @@ namespace DynamicsTypes
         // Статическая и динамическая типизация
         static void F4()
         {
+            // При создании неявно типизированной локальной переменной var ёё тип фиксируется в момент инициализации
+            var v0 = string.Empty;
+            Console.WriteLine("the type of v0 is: {0}, value is: {1}", v0.GetType(), v0);
+            v0 = "qwerty";
+            Console.WriteLine("the type of v0 is: {0}, value is: {1}", v0.GetType(), v0);
+            // v0 = 125; // Присвоение начений другого типа недопустимо.
+            v0 = 125.ToString();
 
+            // Переменная типа object может получить начальное значение любого типа.
+            // на протяжении времени существования объекта это значение может быть заменено новым значением любого типа. Почему это так?
+            object obj;
+            obj = "Hello!";
+            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
+            obj = false;
+            // Компилятором допускается изменение значения.
+            // В конкретном случае - значения поля Z.
+            // Даже если этого поля не было и нет! Все проблемы вознакают на этапе выполнения кода.
+            // ((Point3D)obj).Z = 125.125;
+            // Во избежание генерации исключения требуется:
+            // 1. явное корректное приведение типа,
+            // 2. по ссылке на obj должен быть объект соответсвующего типа.
+            // В данном случае транслятор допустит оператор присвоения к выполнению, поскольку класс Point3D 
+            // объявление свойства Z типа double
+            // Однако на этапе выполнения возникает исключение, посколько в данный момент obj ссылается на объект
+            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
+            obj = new Point3D();
+            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
+            ((Point3D)obj).Z = 125.125;
+
+            // Объявлена переменная типа dynamic по имени t.
+            // Аналогично, t может получить какое угодно начальное занчение, и на протяэении времени существования переменной это значение может быть заменено новым.
+            dynamic t = "Hello!";
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+
+            t = false;
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+
+            t = new Point2D();
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+
+            t.Y = Math.E;
+            Console.WriteLine("the type of t is: {0}, value is: {1}", t.getType(), t);
+
+            try
+            {
+                t.qwerty = "йцукен";
+            }
+            catch(Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void F5()
