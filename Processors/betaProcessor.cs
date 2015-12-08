@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Processors
 {
-    class betaProcessor
+    public class betaProcessor
     {
         int field;
         public int Field

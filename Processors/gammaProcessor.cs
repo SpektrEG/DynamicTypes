@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Processors
 {
-    class gammaProcessor
+    public class gammaProcessor
     {
         PointF field;
         public PointF Field

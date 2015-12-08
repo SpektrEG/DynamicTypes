@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Processors
 {
-    class alfaProcessor
+    public class alfaProcessor
     {
-        int field;
+        private int field;
         public int Field
         {
             get { return field; }
@@ -21,7 +21,7 @@ namespace Processors
         }
         public alfaProcessor(alfaProcessor key)
         {
-            this.field = key.field;
+            this.field = key.Field;
         }
 
         public static alfaProcessor operator + (alfaProcessor a1, alfaProcessor a2)
@@ -32,6 +32,11 @@ namespace Processors
         public override string ToString()
         {
             return String.Format("This is alfaProcessor object. Field: {0}", field);
+        }
+        
+        public void f1()
+        {
+            Console.WriteLine("Hello, I'm here!");
         }
     }
 }

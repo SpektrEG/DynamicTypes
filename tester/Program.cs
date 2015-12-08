@@ -24,7 +24,6 @@ namespace tester
                 try
                 {
                     Console.WriteLine(p);
-                    Console.WriteLine(p.Field);
                     Console.WriteLine(p + p);
                 }
                 catch (Exception ex)

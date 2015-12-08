@@ -9,7 +9,7 @@ namespace Processors
 {
     public class pBuilder
     {
-        const int nTypesOfProcessors = 3;
+        const int nTypesOfProcessors = 5;
         static Random rnd = new Random();
 
         public static dynamic getProcessors()
@@ -28,6 +28,12 @@ namespace Processors
                                 (float)(Math.PI * rnd.NextDouble()),
                                 (float)(Math.PI * rnd.NextDouble())
                         ));
+                    break;
+                case 3:
+                    val = new betaProcessor(rnd.Next());
+                    break;
+                case 4:
+                    val = rnd.Next();
                     break;
             }
             return val;
