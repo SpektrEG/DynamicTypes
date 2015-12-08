@@ -158,8 +158,8 @@ namespace DynamicsTypes
             // объявление свойства Z типа double
             // Однако на этапе выполнения возникает исключение, посколько в данный момент obj ссылается на объект
             obj = new Point3D();
-            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
             ((Point3D)obj).Z = 125.125;
+            Console.WriteLine("the type of obj is: {0}, value is: {1}", obj.GetType(), obj);
 
             // Объявлена переменная типа dynamic по имени t.
             // Аналогично, t может получить какое угодно начальное занчение, и на протяэении времени существования переменной это значение может быть заменено новым.
@@ -187,7 +187,25 @@ namespace DynamicsTypes
 
         static void F5()
         {
+            dynamic d = null;
 
+            //for( int i = 0; i < 25; i++)
+            //{
+            //    d = ObjectGenerator.getObject;
+            //    try
+            //    {
+            //        d.X = 125.325;
+            //        Console.WriteLine("success");
+            //    }
+            //    catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)
+            //    {
+            //        Console.WriteLine("fail");
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+            //    Console.WriteLine(d);
+            //    Console.WriteLine("==========");
+            //}
         }
     }
 }
