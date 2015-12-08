@@ -1,1 +1,3 @@
-.vs/DynamicsTypes
+.vs/*
+*/bin/*
+*/obj/*

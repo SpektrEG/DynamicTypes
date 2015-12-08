@@ -1,5 +1,0 @@
-C:\CS\2015\DynamicsTypes\DynamicsTypes\bin\Debug\DynamicsTypes.exe.config
-C:\CS\2015\DynamicsTypes\DynamicsTypes\bin\Debug\DynamicsTypes.exe
-C:\CS\2015\DynamicsTypes\DynamicsTypes\bin\Debug\DynamicsTypes.pdb
-C:\CS\2015\DynamicsTypes\DynamicsTypes\obj\Debug\DynamicsTypes.exe
-C:\CS\2015\DynamicsTypes\DynamicsTypes\obj\Debug\DynamicsTypes.pdb
